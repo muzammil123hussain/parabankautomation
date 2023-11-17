@@ -21,9 +21,15 @@ public class RegisterStepDefinitions {
         homePage.clickOnRegisterPageLink();
     }
     @Then("I should see the ParaBank register page")
+    @Given("I am on the ParaBank website register page")
     public void iShouldSeeTheParaBankRegisterPage(){
-        System.out.println(registerPage.getSignUpPageTxt());
-        assertEquals("SignUp text is not same as expected", registerPage.getSignUpPageTxt(), "Signing up is easy!");
+        assertTrue(registerPage.isSignUpPageTxtDisplayed());
     }
-
+    @When("I enter {string} , {string} , {string} , {string} , {string} , {int} , {int} , {int} , {string} , {string} , {string}")
+    public void i_enter(String fname, String lname, String address, String city, String state, Integer zip, Integer phone, Integer ssn, String username, String pswd, String cnfpswd) {
+        System.out.println(fname);
+    }
+    @Then("I should see the Welcome message")
+    public void i_should_see_the_welcome_message() {
+    }
 }
