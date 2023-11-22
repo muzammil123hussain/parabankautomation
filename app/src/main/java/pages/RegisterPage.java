@@ -18,6 +18,7 @@ public class RegisterPage extends HomePage{
     private final By confirmPasswordLocator = By.id("repeatedPassword");
     private final By registerButton = By.xpath("//*[@id=\"customerForm\"]/table/tbody/tr[13]/td[2]/input");
     private final By welcomeText = By.className("title");
+    private final By logoutTxt = By.xpath("//*[@id=\"leftPanel\"]/ul/li[8]/a");
 
 
     public boolean isSignUpPageTxtDisplayed() {
@@ -42,9 +43,10 @@ public class RegisterPage extends HomePage{
     public boolean isWelcomeTxtDisplayed() {
         return driver.findElement(welcomeText).isDisplayed();
     }
-
     public String getWelcomeTxt() {
         return driver.findElement(welcomeText).getText();
     }
-
+    public boolean isLogoutTxtDisplayed() {
+        return driver.findElement(logoutTxt).isDisplayed();
+    }
 }

@@ -29,7 +29,7 @@ public class RegisterStepDefinitions {
     @Then("I should see the ParaBank register page")
     @Given("I am on the ParaBank website register page")
     public void iShouldSeeTheParaBankRegisterPage(){
-        assertTrue(registerPage.isSignUpPageTxtDisplayed());
+        assertTrue("SignUp page text is not displayed", registerPage.isSignUpPageTxtDisplayed());
     }
     @When("I enter {string} , {string} , {string} , {string} , {string} , {int} , {int} , {int} , {string} , {string} , {string}")
     public void i_enter(String fname, String lname, String address, String city, String state, Integer zip, Integer phone, Integer ssn, String username, String pswd, String cnfpswd) {
@@ -44,5 +44,10 @@ public class RegisterStepDefinitions {
     @And("Welcome message should contains username")
     public void welcomeMessageShouldContainsUsername() {
         assertTrue("UserName not found in Welcome message", registerPage.getWelcomeTxt().contains(newUsername));
+    }
+
+    @And("Logout link must appear in navigation bar")
+    public void logoutLinkMustAppearInNavigationBar() {
+        assertTrue("Logout link is not displayed in navigation bar", registerPage.isLogoutTxtDisplayed());
     }
 }
