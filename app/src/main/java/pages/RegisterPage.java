@@ -16,6 +16,8 @@ public class RegisterPage extends HomePage{
     private final By usernameLocator = By.id("customer.username");
     private final By passwordLocator = By.id("customer.password");
     private final By confirmPasswordLocator = By.id("repeatedPassword");
+    private final By registerButton = By.xpath("//*[@id=\"customerForm\"]/table/tbody/tr[13]/td[2]/input");
+    private final By welcomeText = By.className("title");
 
 
     public boolean isSignUpPageTxtDisplayed() {
@@ -28,16 +30,21 @@ public class RegisterPage extends HomePage{
         driver.findElement(addressLocator).sendKeys(address);
         driver.findElement(cityLocator).sendKeys(city);
         driver.findElement(stateLocator).sendKeys(state);
-        driver.findElement(zipLocator).sendKeys(zip);
-        driver.findElement(phoneLocator).sendKeys(phone);
-        driver.findElement(ssnLocator).sendKeys(ssn);
+        driver.findElement(zipLocator).sendKeys(zip.toString());
+        driver.findElement(phoneLocator).sendKeys(phone.toString());
+        driver.findElement(ssnLocator).sendKeys(ssn.toString());
         driver.findElement(usernameLocator).sendKeys(username);
         driver.findElement(passwordLocator).sendKeys(pswd);
         driver.findElement(confirmPasswordLocator).sendKeys(cnfpswd);
+        driver.findElement(registerButton).click();
     }
 
     public boolean isWelcomeTxtDisplayed() {
-        return true;
+        return driver.findElement(welcomeText).isDisplayed();
+    }
+
+    public String getWelcomeTxt() {
+        return driver.findElement(welcomeText).getText();
     }
 
 }

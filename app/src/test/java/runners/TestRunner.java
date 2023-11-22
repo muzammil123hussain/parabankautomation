@@ -13,8 +13,8 @@ import pages.DriverFactory;
         plugin = {"pretty", "html:target/cucumber-reports"}
 )
 public class TestRunner {
-    @AfterClass
-    public static void tearDown() {
-        DriverFactory.quitDriver();
-    }
+//    @AfterClass
+//    public static void tearDown() {
+//        DriverFactory.quitDriver();
+//    }
 }
