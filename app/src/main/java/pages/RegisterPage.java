@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class RegisterPage extends HomePage{
+
     private final By signUpText = By.className("title");
     private final By fnameLocator = By.id("customer.firstName");
     private final By lnameLocator = By.id("customer.lastName");

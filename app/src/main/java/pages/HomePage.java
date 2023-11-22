@@ -9,6 +9,7 @@ public class HomePage {
     protected WebDriverWait wait;
 
     private final By registerLink = By.linkText("Register");
+    private final By accountOpeningLink = By.linkText("Open New Account");
 
 
     public HomePage() {
@@ -24,4 +25,9 @@ public class HomePage {
         driver.findElement(registerLink).click();
         return new RegisterPage();
     }
+    public AccountOpeningPage clickOnAccountOpeningPageLink() {
+        driver.findElement(accountOpeningLink).click();
+        return new AccountOpeningPage();
+    }
+
 }
